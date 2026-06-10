@@ -347,6 +347,8 @@ wbsDiagram {
 
 activityDiagram {
 	activity {
+	    BackGroundColor white
+	    HorizontalAlignment center
 	    Padding 10
 	    FontSize 12
 	    RoundCorner 25
@@ -763,5 +765,15 @@ nwdiagDiagram {
 	}
 }
 
+activityDiagram {
+  activity {
+    BackGroundColor white
+    HorizontalAlignment center
+  }
+  diamond {
+    BackGroundColor white
+    HorizontalAlignment center
+  }
 }
 
+}

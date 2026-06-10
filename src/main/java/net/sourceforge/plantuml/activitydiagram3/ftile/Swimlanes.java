@@ -315,6 +315,10 @@ public class Swimlanes implements TextBlock, Styleable {
 		final XDimension2D dimensionFull = full.calculateDimension(stringBounder);
 		int i = 0;
 		if (TeaVM.a()) assert dividers.size() == swimlanes().size() + 1;
+		
+		double firstLineX = Double.MAX_VALUE;
+		double lastLineX = -Double.MAX_VALUE;
+
 		for (Swimlane swimlane : swimlanesSpecial()) {
 			final LaneDivider divider1 = dividers.get(i);
 
@@ -334,7 +338,28 @@ public class Swimlanes implements TextBlock, Styleable {
 
 			final double dividerWith = divider1.calculateDimension(stringBounder).getWidth();
 			divider1.drawU(ug.apply(UTranslate.dx(xpos - dividerWith)));
+			
+			double lineX = xpos - dividerWith + divider1.getX1();
+			if (lineX < firstLineX) firstLineX = lineX;
+			if (lineX > lastLineX) lastLineX = lineX;
+			
 			i++;
+		}
+
+		final HColor color = getStyle().value(PName.LineColor).asColor(skinParam.getIHtmlColorSet());
+		final net.sourceforge.plantuml.klimt.UStroke thickness = getStyle().getStroke();
+		
+		if (firstLineX < lastLineX && color != null) {
+			double totalWidth = lastLineX - firstLineX;
+			net.sourceforge.plantuml.klimt.shape.ULine hline = net.sourceforge.plantuml.klimt.shape.ULine.hline(totalWidth);
+			UGraphic ugLine = ug.apply(thickness).apply(color).apply(UTranslate.dx(firstLineX));
+			
+			// Top line
+			ugLine.draw(hline);
+			// Header bottom line
+			ugLine.apply(UTranslate.dy(titleHeightTranslate.getDy())).draw(hline);
+			// Bottom line
+			ugLine.apply(UTranslate.dy(titleHeightTranslate.getDy() + dimensionFull.getHeight())).draw(hline);
 		}
 
 		final Cross cross = new Cross(ug.apply(getTitleHeightTranslate(stringBounder)));

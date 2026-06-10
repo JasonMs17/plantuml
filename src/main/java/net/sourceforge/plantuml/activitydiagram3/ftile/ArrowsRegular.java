@@ -49,7 +49,7 @@ public class ArrowsRegular extends Arrows {
 		polygon.addPoint(-delta2, delta1);
 		polygon.addPoint(0, 0);
 		polygon.addPoint(delta2, delta1);
-		polygon.addPoint(0, delta1 - 4);
+		polygon.addPoint(0, 0);
 		return polygon;
 	}
 
@@ -59,7 +59,7 @@ public class ArrowsRegular extends Arrows {
 		polygon.addPoint(-delta2, -delta1);
 		polygon.addPoint(0, 0);
 		polygon.addPoint(delta2, -delta1);
-		polygon.addPoint(0, -delta1 + 4);
+		polygon.addPoint(0, 0);
 		return polygon;
 	}
 
@@ -69,7 +69,7 @@ public class ArrowsRegular extends Arrows {
 		polygon.addPoint(-delta1, -delta2);
 		polygon.addPoint(0, 0);
 		polygon.addPoint(-delta1, delta2);
-		polygon.addPoint(-delta1 + 4, 0);
+		polygon.addPoint(0, 0);
 		return polygon;
 	}
 
@@ -79,7 +79,7 @@ public class ArrowsRegular extends Arrows {
 		polygon.addPoint(delta1, -delta2);
 		polygon.addPoint(0, 0);
 		polygon.addPoint(delta1, delta2);
-		polygon.addPoint(delta1 - 4, 0);
+		polygon.addPoint(0, 0);
 		return polygon;
 	}
 

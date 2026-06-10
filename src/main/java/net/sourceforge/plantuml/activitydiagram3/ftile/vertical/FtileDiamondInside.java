@@ -86,7 +86,7 @@ public class FtileDiamondInside extends FtileDiamondWIP {
 		final XDimension2D dimLabel = label.calculateDimension(stringBounder);
 		final XDimension2D dimTotal = calculateDimensionAlone(stringBounder);
 		ug = ug.apply(borderColor).apply(getStyle().getStroke()).apply(backColor.bg());
-		ug.draw(Hexagon.asPolygon(shadowing, dimTotal.getWidth(), dimTotal.getHeight()));
+		ug.draw(Hexagon.asPolygonSquare(shadowing, dimTotal.getWidth(), dimTotal.getHeight()));
 
 		north.drawU(ug.apply(new UTranslate(4 + dimTotal.getWidth() / 2, dimTotal.getHeight())));
 		south.drawU(ug.apply(new UTranslate(4 + dimTotal.getWidth() / 2, dimTotal.getHeight())));
@@ -109,8 +109,10 @@ public class FtileDiamondInside extends FtileDiamondWIP {
 		if (dimLabel.getWidth() == 0 || dimLabel.getHeight() == 0) {
 			dim = new XDimension2D(Hexagon.hexagonHalfSize * 2, Hexagon.hexagonHalfSize * 2);
 		} else {
-			dim = dimLabel.atLeast(Hexagon.hexagonHalfSize * 2, Hexagon.hexagonHalfSize * 2)
-					.delta(Hexagon.hexagonHalfSize * 2, 0);
+			double w = dimLabel.getWidth();
+			double h = dimLabel.getHeight();
+			double W = w + h + 12;
+			dim = new XDimension2D(W, W);
 		}
 		return new FtileGeometry(dim, dim.getWidth() / 2, 0, dim.getHeight());
 	}

@@ -382,6 +382,8 @@ activityDiagram {
 
 activityDiagram {
 	activity {
+	    BackGroundColor white
+	    HorizontalAlignment center
 	    LineThickness 1.5
 	    Padding 10
 	    FontSize 12
