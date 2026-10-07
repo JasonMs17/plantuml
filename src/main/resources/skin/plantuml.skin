@@ -300,7 +300,9 @@ swimlane {
   BackGroundColor transparent
   LineColor black
   LineThickness 1.5
-  FontSize 18
+  FontSize 12
+  FontStyle bold
+  FontName SansSerif
 }
 
 arrow {

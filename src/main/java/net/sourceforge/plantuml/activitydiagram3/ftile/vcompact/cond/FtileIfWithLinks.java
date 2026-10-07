@@ -201,8 +201,8 @@ public class FtileIfWithLinks extends FtileIfWithDiamonds {
 
 			final UPolygon arrow = x2 > x1 ? skinParam().arrows().asToRight() : skinParam().arrows().asToLeft();
 			Snake snake = Snake.create(skinParam(), myArrowColor, arrow);
-			if (branchEmpty)
-				snake = snake.emphasizeDirection(Direction.DOWN);
+			// if (branchEmpty)
+			//	snake = snake.emphasizeDirection(Direction.DOWN);
 
 			snake.addPoint(x1, y1);
 			snake.addPoint(x1, y2);
@@ -313,8 +313,8 @@ public class FtileIfWithLinks extends FtileIfWithDiamonds {
 			final double y2 = p2.getY();
 
 			Snake snake = Snake.create(skinParam(), myArrowColor);
-			if (branchEmpty)
-				snake = snake.emphasizeDirection(Direction.DOWN);
+			// if (branchEmpty)
+			// 	snake = snake.emphasizeDirection(Direction.DOWN);
 
 			snake.addPoint(x1, y1);
 			snake.addPoint(x1, y2);

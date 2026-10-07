@@ -6,7 +6,7 @@
  *
  * Project Info:  https://plantuml.com
  * 
- * If you like this project or if you find it useful, you can support us at:
+ * If you like this project or if you find it useful,  you can support us at:
  * 
  * https://plantuml.com/patreon (only 1$ per month!)
  * https://plantuml.com/paypal

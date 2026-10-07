@@ -329,7 +329,9 @@ swimlane {
   BackGroundColor transparent
   LineColor black
   LineThickness 2
-  FontSize 18
+  FontSize 12
+  FontStyle bold
+  FontName SansSerif
 }
 
 diamond {

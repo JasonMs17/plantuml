@@ -340,8 +340,7 @@ public class FtileIfDown extends AbstractFtile {
 			final double t11 = getTranslateForThen(stringBounder).getDx();
 			final double xmin = Math.min(x1 - Hexagon.hexagonHalfSize, getTranslateForThen(stringBounder).getDx());
 
-			final Snake snake = Snake.create(skinParam(), endInlinkColor, skinParam().arrows().asToRight())
-					.emphasizeDirection(Direction.DOWN);
+			final Snake snake = Snake.create(skinParam(), endInlinkColor, skinParam().arrows().asToRight());
 			snake.addPoint(x1, y1);
 			snake.addPoint(xmin, y1);
 			snake.addPoint(xmin, y2);
@@ -393,8 +392,7 @@ public class FtileIfDown extends AbstractFtile {
 			final double xmax = Math.max(x1 + Hexagon.hexagonHalfSize,
 					getTranslateForThen(stringBounder).getDx() + thenGeom.getWidth());
 
-			final Snake snake = Snake.create(skinParam(), endInlinkColor, skinParam().arrows().asToLeft())
-					.emphasizeDirection(Direction.DOWN);
+			final Snake snake = Snake.create(skinParam(), endInlinkColor, skinParam().arrows().asToLeft());
 			snake.addPoint(x1, y1);
 			snake.addPoint(xmax, y1);
 			snake.addPoint(xmax, y2);
